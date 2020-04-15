@@ -94,3 +94,33 @@ void PEBNtGlobalFlag()
             ret
     }
 }
+void PEBProcessHeap()
+{
+    //DEfault ForceFlags = 0x0
+    //Default Falgs = 0x0
+    char dbg[] = "PEBProcessHeap() detected Debbuger!\n";
+    char ndbg[] = "No Debugger !\n";
+
+
+    __asm
+    {
+        mov eax, fs: [0x30] //Get PEB structure address
+        cmp dword ptr[eax + 0x18], 0//Compate default value and eax
+        jz exit
+        jmp message
+        message :
+            lea ebx, dbg
+            push ebx
+            call printf
+            pop ebx
+            leave
+            ret
+        exit :
+            lea eax, ndbg
+            push eax
+            call printf
+            pop eax
+            leave
+            ret
+    }
+}
