@@ -1,0 +1,8 @@
+﻿  Source.c
+C:\Users\busra.yenidogan\Desktop\Anti-Debug\Anti-Debug\Source.c(29,75): warning C4047: 'function': 'PBOOL' differs in levels of indirection from 'PBOOL *'
+C:\Users\busra.yenidogan\Desktop\Anti-Debug\Anti-Debug\Source.c(29,75): warning C4024: 'CheckRemoteDebuggerPresent': different types for formal and actual parameter 2
+C:\Users\busra.yenidogan\Desktop\Anti-Debug\Anti-Debug\Source.c(48): warning C4414: 'exit': short jump to function converted to near
+C:\Users\busra.yenidogan\Desktop\Anti-Debug\Anti-Debug\Source.c(57,5): warning C4102: 'exit': unreferenced label
+C:\Users\busra.yenidogan\Desktop\Anti-Debug\Anti-Debug\Source.c(79): warning C4414: 'exit': short jump to function converted to near
+C:\Users\busra.yenidogan\Desktop\Anti-Debug\Anti-Debug\Source.c(88,9): warning C4102: 'exit': unreferenced label
+  Anti-Debug.vcxproj -> C:\Users\busra.yenidogan\Desktop\Anti-Debug\Debug\Anti-Debug.exe
