@@ -9,6 +9,7 @@ int main()
     CheckRemoteDebuggerPresentAPI();
     PEBBeingDebugged();
     PEBNtGlobalFlag();
+    PEBProcessHeap();
 }
 
 void IsDebuggerPresentAPI() //Data Teype : BOOL User-mode debugging detection
