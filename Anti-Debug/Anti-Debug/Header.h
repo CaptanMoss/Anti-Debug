@@ -4,6 +4,7 @@ void IsDebuggerPresentAPI(); //Reference : https://docs.microsoft.com/en-us/wind
 void CheckRemoteDebuggerPresentAPI(); //Reference : https://docs.microsoft.com/tr-tr/windows/win32/api/debugapi/nf-debugapi-checkremotedebuggerpresent
 void PEBBeingDebugged(); // Reference : https://www.aldeid.com/wiki/PEB-Process-Environment-Block/BeingDebugged
 void PEBNtGlobalFlag(); // Reference : https://www.aldeid.com/wiki/PEB-Process-Environment-Block/NtGlobalFlag
+void PEBProcessHeap(); // Reference : https://www.aldeid.com/wiki/PEB-Process-Environment-Block/ProcessHeap
 
 
 
@@ -14,7 +15,7 @@ void PEBNtGlobalFlag(); // Reference : https://www.aldeid.com/wiki/PEB-Process-E
 /*
 PEB - Process Enviroment Block
 
-Uygulamalar tarafýndan kullanýlan user-mode data structure'dýr.
+Uygulamalar tarafÃ½ndan kullanÃ½lan user-mode data structure'dÃ½r.
 
 struct _PEB {
     0x000 BYTE InheritedAddressSpace;
