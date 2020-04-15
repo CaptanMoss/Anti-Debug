@@ -42,7 +42,6 @@ void PEBBeingDebugged()
     char ndbg[] = "No Debugger !\n";
     __asm
     {
-        mov eax, dword ptr fs : [0x18]
         mov eax,fs:[0x30] //Get PEB structure address
         cmp byte ptr[eax+0x2],0 //Beingdebugged offset is 0x2
         jz exit
