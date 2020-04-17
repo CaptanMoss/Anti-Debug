@@ -1,21 +1,41 @@
 #pragma once
+#include <stdio.h>
+#include <Windows.h>
+#include <debugapi.h>
+#include <winternl.h>
+#include <errhandlingapi.h>
 
 void IsDebuggerPresentAPI(); //Reference : https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-isdebuggerpresent
 void CheckRemoteDebuggerPresentAPI(); //Reference : https://docs.microsoft.com/tr-tr/windows/win32/api/debugapi/nf-debugapi-checkremotedebuggerpresent
 void PEBBeingDebugged(); // Reference : https://www.aldeid.com/wiki/PEB-Process-Environment-Block/BeingDebugged
 void PEBNtGlobalFlag(); // Reference : https://www.aldeid.com/wiki/PEB-Process-Environment-Block/NtGlobalFlag
 void PEBProcessHeap(); // Reference : https://www.aldeid.com/wiki/PEB-Process-Environment-Block/ProcessHeap
+void NTDebuggerPort(); // Reference : https://github.com/mrexodia/TitanHide/blob/master/TitanHideTest/main.cpp
+void NTDebugFlags(); //// Reference : https://github.com/mrexodia/TitanHide/blob/master/TitanHideTest/main.cpp
+void NTDebugObject();
 
+typedef NTSTATUS(NTAPI* _NtQueryInformationProcess)(
+    HANDLE ProcessHandle,
+    DWORD ProcessInformationClass, /* can't be bothered defining the whole enum */
+    PVOID ProcessInformation,
+    DWORD ProcessInformationLength,
+    PDWORD ReturnLength
+    );
 
+/*
 
+ntqueryinformationprocess (ntdll)
 
+- Belirtilen process hakkında PEB sayesinde bilgi almamızı sağlar.
+
+*/
 
 
 
 /*
 PEB - Process Enviroment Block
 
-Uygulamalar tarafýndan kullanýlan user-mode data structure'dýr.
+Uygulamalar tarafından kullanılan user-mode data structure'dır.
 
 struct _PEB {
     0x000 BYTE InheritedAddressSpace;
